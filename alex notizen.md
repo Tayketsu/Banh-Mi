@@ -6,3 +6,6 @@ https://www.simplifiedpython.net/python-rest-api-example/
 
 Scheduler
 https://stackoverflow.com/questions/21214270/scheduling-a-function-to-run-every-hour-on-flask/46738061
+
+Pickle
+https://www.datacamp.com/community/tutorials/pickle-python-tutorial#json
