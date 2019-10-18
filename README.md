@@ -21,6 +21,10 @@ We developed our features using Python and for the user interface we additionall
 The server can use the API to access the database (which includes booking and vehicle information).
 The other databases such as the ones containing user data and recurring booking information have been hacked together by storing python data types with pickles. The server repeatedly/regularly runs a task to check if the repeating bookings have been added to the booking database and if not, adds the missing bookings.
 Due to the lack of real data, we generated fictional bookings to prove the feasability of our implementation.
+#### 4.1 File structure
+The main.py file provides the gui functionality and uses the functions in the client.py file to communicate with the server.  
+The server.py should be started as a background process first and will listen for requests from the client. It uses functions from the control.py and api_control.py files to access the db trough the API
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMzAzOTU0OTg0XX0=
 -->
