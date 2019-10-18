@@ -1,0 +1,211 @@
+<AddbookingScreen>:
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex("#35477d")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#35477d")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+        GridLayout:
+            rows: 1
+            size_hint: 1, .15
+            pos_hint: {"top": .60, "right": 1}
+
+        GridLayout:
+            rows: 1
+            size_hint: 1, .05
+            pos_hint: {"top": .80, "right": 1}
+            Label:
+                color: (0,0,0,1)
+                text: ""
+                id: time_label
+            Label:
+                color: (0,0,0,1)
+                text: ""
+                id: distance_label
+            Label:
+                color: (0,0,0,1)
+                text: ""
+                id: sets_label
+
+        TextInput:
+            size_hint: .3, .1
+            pos_hint: {"top": .9, "right": .4}
+            hint_text: "Startingtime"
+            id: time_input
+            on_text:
+                self.background_color = (1,1,1,1)
+                self.focus = not self.focus if "\n" in self.text else self.focus
+
+        TextInput:
+            size_hint: .3, .1
+            pos_hint: {"top": .9, "right": .9}
+            hint_text: "Endingtime"
+            id: end_input
+            on_text:
+                self.background_color = (1,1,1,1)
+                self.focus = not self.focus if "\n" in self.text else self.focus
+        TextInput:
+            size_hint: .2, .1
+            pos_hint: {"top": .7, "right": .3}
+            hint_text: "MM"
+            id: month_input
+            on_text:
+                self.background_color = (1,1,1,1)
+                self.focus = not self.focus if "\n" in self.text else self.focus
+        TextInput:
+            size_hint: .2, .1
+            pos_hint: {"top": .7, "right": .6}
+            hint_text: "DD"
+            id: day_input
+            on_text:
+                self.background_color = (1,1,1,1)
+                self.focus = not self.focus if "\n" in self.text else self.focus
+        TextInput:
+            size_hint: .2, .1
+            pos_hint: {"top": .7, "right": .9}
+            hint_text: "YY"
+            id: year_input
+            on_text:
+                self.background_color = (1,1,1,1)
+                self.focus = not self.focus if "\n" in self.text else self.focus
+	
+
+        GridLayout:
+            rows: 1
+            size_hint: 1, .1
+            pos_hint: {"top": .4, "right": 1}
+            LabelButton:
+                text: "[u]Mo[/u]"
+                id: m1
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                markup: True
+                on_release:
+                    app.monday(self)
+            LabelButton:
+                text: "[u]Tu[/u]"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                #size_hint: .33, .1
+                #pos_hint: {"top": .5, "right": .666}
+                markup: True
+                on_release:
+                    app.tuesday(self)
+            LabelButton:
+                text: "[u]Wed[/u]"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                #size_hint: .33, .1
+                #pos_hint: {"top": .5, "right": 1}
+                markup: True
+                on_release:
+                    app.wednesday(self)
+        GridLayout:
+            rows: 1
+            size_hint: 1, .1
+            pos_hint: {"top": .5, "right": 1}
+            LabelButton:
+                text: "[u]Thu[/u]"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                markup: True
+                on_release:
+                    app.thursday(self)
+            LabelButton:
+                text: "[u]Fri[/u]"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                #size_hint: .33, .1
+                #pos_hint: {"top": .6, "right": .666}
+                markup: True
+                on_release:
+                    app.friday(self)
+            LabelButton:
+                text: "[u]Sat[/u]"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                #size_hint: .33, .1
+                #pos_hint: {"top": .6, "right": 1}
+                markup: True
+                on_release:
+                    app.saturday(self)
+            LabelButton:
+                text: "[u]Sun[/u]"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                #size_hint: .33, .1
+                #pos_hint: {"top": .6, "right": 1}
+                markup: True
+                on_release:
+                    app.sunday(self)
+        LabelButton:
+            text: "[u]Add Serialbooking[/u]"
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            size_hint: .5, .1
+            pos_hint: {"top": .1, "right": 1}
+            markup: True
+            on_release:
+                app.add_booking()
+        LabelButton:
+            text: "[u]Back[/u]"
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#35477d") if self.state == 'normal' else utils.get_color_from_hex("#6C5B7B")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            size_hint: .5, .1
+            pos_hint: {"top": .1, "right": .5}
+            markup: True
+            on_release:
+                app.change_screen("home_screen", direction = 'backwards')
+	
+
+
+
+
+
+
+
+

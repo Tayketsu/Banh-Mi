@@ -1,0 +1,81 @@
+<FriendsListScreen>: 
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex("#ffffff")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#ffffff")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+        GridLayout:
+            rows: 1
+            size_hint: .6, .2
+            pos_hint: {"top": 0.95, "right": 0.6}
+            ImageButton:
+                source: "icons/Gol.png"
+                on_release:
+                    time_label.color = (1,1,1,1)
+                    distance_label.color = (0,0,0,1)
+                    sets_label.color = (0,0,0,1)
+                    app.option_choice = self.source
+        GridLayout:
+            rows: 1
+            size_hint: .6, .2
+            pos_hint: {"top": 0.95, "right": 0.8}
+            ImageButton:
+                source: "icons/Silb.png"
+        GridLayout:
+            rows: 1
+            size_hint: .6, .2
+            pos_hint: {"top": 0.95, "right": 1.0}
+            ImageButton:
+                source: "icons/Bronz.png"
+        FloatLayout:
+            Label:
+                id: friend_id_label
+                font_size: 20
+                text: "9"
+                size_hint: 1, .1
+                pos_hint: {"top": 0.9, "right": 0.8}
+        FloatLayout:
+            Label:
+                id: friend_id_label
+                font_size: 20
+                text: "2"
+                size_hint: 1, .1
+                pos_hint: {"top": 0.9, "right": 1}
+        FloatLayout:
+            Label:
+                id: friend_id_label
+                font_size: 20
+                text: "3"
+                size_hint: 1, .1
+                pos_hint: {"top": 0.9, "right": 1.2}
+
+        GridLayout:
+            rows: 1
+            size_hint: 1.5, .22
+            pos_hint: {"top": .70, "right": 1.1}
+            ImageButton:
+                source: "icons/Tre.png"
+                on_release:
+                    time_label.color = (1,1,1,1)
+                    distance_label.color = (0,0,0,1)
+                    sets_label.color = (0,0,0,1)
+                    app.option_choice = self.source
+        GridLayout:
+            rows: 1
+            size_hint: 1.5, .33
+            pos_hint: {"top": .75, "right": 1.4	}
+            ImageButton:
+                source: "icons/Clou.jpg"
+
+
+		
+
